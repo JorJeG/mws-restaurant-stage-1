@@ -1,4 +1,4 @@
-var staticCacheName = 'mws-restaurant-static-v2';
+const staticCacheName = 'mws-restaurant-static-v2';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -22,6 +22,16 @@ self.addEventListener('install', function(event) {
         'img/8.jpg',
         'img/9.jpg',
         'img/10.jpg',
+        'img/1-small.jpg',
+        'img/2-small.jpg',
+        'img/3-small.jpg',
+        'img/4-small.jpg',
+        'img/5-small.jpg',
+        'img/6-small.jpg',
+        'img/7-small.jpg',
+        'img/8-small.jpg',
+        'img/9-small.jpg',
+        'img/10-small.jpg',
         'https://unpkg.com/leaflet@1.3.1/dist/images/marker-shadow.png',
         'https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon.png',
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
