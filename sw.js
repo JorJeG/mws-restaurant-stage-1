@@ -3,6 +3,7 @@ const staticCacheName = 'mws-restaurant-static-v2';
 
 self.addEventListener('install', function(event) {
   const cacheArray = [
+    '/',
     './index.html',
     './restaurant.html',
     'js/dbhelper.js',
@@ -62,19 +63,8 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  var requestUrl = new URL(event.request.url);
-
-  if (requestUrl.origin == location.origin) {
-    if (requestUrl.pathname === '/') {
-      event.respondWith(caches.match('/index.html'));
-    }
-    if (requestUrl.pathname === '/restaurant.html') {
-      event.respondWith(caches.match('/restaurant.html'));
-    }
-  }
-
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request, {ignoreSearch: true}).then(function(response) {
       return response || fetch(event.request);
     })
   );
